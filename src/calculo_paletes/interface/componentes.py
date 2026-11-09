@@ -46,6 +46,12 @@ class RotuloResultado(QLabel):
         super().resizeEvent(evento)
         self._ajustar()
 
+    def showEvent(self, evento) -> None:  # noqa: N802 — nome exigido pelo Qt
+        # A conta pode ter sido refeita com a aba escondida (ex.: Salvar no EDITAR refaz as três
+        # abas): ao aparecer, confere de novo se o número cabe.
+        super().showEvent(evento)
+        self._ajustar()
+
     def _ajustar(self) -> None:
         cabe = self.fontMetrics().horizontalAdvance(self._completo) <= self.contentsRect().width()
         estouro = bool(self._completo) and not cabe and self.isVisible()
