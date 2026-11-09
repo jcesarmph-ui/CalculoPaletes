@@ -7,7 +7,7 @@
 ![pytest](https://img.shields.io/badge/pytest-testes-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
 ![Ruff](https://img.shields.io/badge/Ruff-estilo-D7FF64?style=for-the-badge&logo=ruff&logoColor=black)
 ![Claude Code](https://img.shields.io/badge/Claude_Code-IA-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
-![Status](https://img.shields.io/badge/status-em_desenvolvimento-FFD54F?style=for-the-badge)
+![Status](https://img.shields.io/badge/status-em_uso_v1.0.0-43A047?style=for-the-badge)
 
 **Calculadora desktop para a engenharia definir o palete de chapas e trapézios de aço:**
 **blanks por pilha, alturas, fita de arquear, plástico e peso do palete de madeira — na hora, sem planilha.**
@@ -85,7 +85,7 @@ campos, chama as regras e mostra os resultados.
 - [x] **Fase 1** — Regras de cálculo (chapa, trapézio, peso do palete) com testes
 - [x] **Fase 2** — Janela com as três abas: contas na hora, avisos em vermelho e tela que não se mexe com números enormes
 - [x] **Fase 3** — Menu ☰ → EDITAR: valores fixos editáveis, gravados para todos e com as contas refeitas na hora
-- [ ] **Fase 4** — Programa empacotado e em uso (versão 1.0.0)
+- [x] **Fase 4** — Programa empacotado com lançador (cópia local rápida) e em uso na rede (versão 1.0.0)
 - [ ] **Fase 5** — Portfólio: fotos das telas (dados fictícios) e README completo
 
 ## 🧠 Competências

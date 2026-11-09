@@ -20,3 +20,6 @@ dist/
 *.xlsx
 *.xls
 *.db
+
+# Scripts de gerar o .exe e montar a entrega (cópia no repositório PRIVADO claude-config)
+empacotamento/
