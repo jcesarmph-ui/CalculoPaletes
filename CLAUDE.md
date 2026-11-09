@@ -11,7 +11,14 @@ só o que é deste programa.
 - **Só calculadora**: as contas se refazem enquanto o usuário digita. **Sem banco, sem histórico,
   sem Lixeira e sem trava de edição** (decisão do usuário, 2026-11-09).
 - A única coisa gravada são os **valores fixos** alterados no menu ☰ → **EDITAR**; ficam valendo
-  para sempre (até editar de novo), num arquivo de configuração na pasta de dados.
+  para sempre (até editar de novo) em `dados/configuracao.json` (classe `Configuracao`, em
+  `armazenamento/`), para todos que usam o programa.
+- **EDITAR sem senha** (decisão do usuário, 2026-11-09: a senha foi feita só para ele ver
+  funcionando e depois retirada). Tem **Salvar** e **Cancelar**; sem botão "voltar aos valores da
+  planilha". Folga da fita e cava aceitam zero ("não tem"); os outros valores precisam ser > 0 e
+  as madeiras empilhadas, inteiro.
+- O ☰ fica à esquerda do logo (28 px de espaço); o menu abre por cima da tela, pela esquerda, e
+  fecha clicando fora, no ☰ ou com Esc.
 - Mostrar **só** as saídas listadas abaixo. Fora do programa (até o usuário pedir): custo em R$,
   escolha da bobina de plástico 1600/2200, abas ROLO, PPAP e RNC da planilha.
 

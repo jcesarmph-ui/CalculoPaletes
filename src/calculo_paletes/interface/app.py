@@ -4,11 +4,13 @@ import ctypes
 import sys
 
 from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QMessageBox
 
+from calculo_paletes.armazenamento.configuracao import Configuracao, ErroConfiguracao
 from calculo_paletes.interface.estilo import LOGOS
 from calculo_paletes.interface.janela import JanelaPrincipal
 from calculo_paletes.interface.pasta_dados import arquivo_se_existir, pasta_dados_padrao
+from calculo_paletes.regras.valores_fixos import ValoresFixos
 
 
 def main() -> int:
@@ -22,6 +24,16 @@ def main() -> int:
     if icone is not None:
         app.setWindowIcon(QIcon(str(icone)))
     logo = next(filter(None, (arquivo_se_existir(pasta, nome) for nome in LOGOS)), None)
-    janela = JanelaPrincipal(logo=logo)
+    configuracao = Configuracao(pasta)
+    try:
+        fixos = configuracao.carregar_fixos()
+    except ErroConfiguracao as erro:
+        QMessageBox.warning(
+            None,
+            "Valores fixos",
+            f"{erro}\n\nO programa vai abrir com os valores da planilha original.",
+        )
+        fixos = ValoresFixos()
+    janela = JanelaPrincipal(fixos=fixos, logo=logo, configuracao=configuracao)
     janela.showMaximized()
     return app.exec()

@@ -76,6 +76,17 @@ QToolTip {{ background: {campo}; color: {texto}; border: 1px solid {borda}; }}
 #erro {{ color: {erro}; }}
 #fixo {{ color: {titulo}; font-weight: bold; }}
 #rodape QLabel {{ font-size: 14pt; }}
+QPushButton {{ background: {campo}; border: 1px solid {borda}; border-radius: 6px;
+               padding: 8px 28px; color: {texto}; }}
+QPushButton:hover {{ background: {selecao}; }}
+QPushButton:disabled {{ color: {apagado}; border: 1px solid {campo_borda}; }}
+QDialog {{ background: {fundo}; }}
+#botao_menu {{ font-size: 26pt; border: none; background: transparent; padding: 0 6px; }}
+#botao_menu:hover {{ background: {aba}; }}
+#fundo_menu {{ background: rgba(0, 0, 0, 70); }}
+#painel_menu {{ background: {caixa}; border-right: 1px solid {borda}; }}
+#titulo_menu {{ font-size: 15pt; font-weight: bold; color: {apagado}; letter-spacing: 2px; }}
+#opcao_menu {{ font-size: 16pt; font-weight: bold; text-align: left; padding: 12px 18px; }}
 QTabWidget::pane {{ border: 1px solid {borda}; border-radius: 6px; top: -1px; }}
 QTabBar::tab {{ background: {aba}; border: 1px solid {campo_borda}; border-bottom: none;
                border-top-left-radius: 6px; border-top-right-radius: 6px;

@@ -84,7 +84,7 @@ campos, chama as regras e mostra os resultados.
 - [x] **Fase 0** — Levantamento das regras e estrutura do projeto
 - [x] **Fase 1** — Regras de cálculo (chapa, trapézio, peso do palete) com testes
 - [x] **Fase 2** — Janela com as três abas: contas na hora, avisos em vermelho e tela que não se mexe com números enormes
-- [ ] **Fase 3** — Menu ☰ → EDITAR para os valores fixos
+- [x] **Fase 3** — Menu ☰ → EDITAR: valores fixos editáveis, gravados para todos e com as contas refeitas na hora
 - [ ] **Fase 4** — Programa empacotado e em uso (versão 1.0.0)
 - [ ] **Fase 5** — Portfólio: fotos das telas (dados fictícios) e README completo
 
