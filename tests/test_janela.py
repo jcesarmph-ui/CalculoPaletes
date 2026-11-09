@@ -198,3 +198,25 @@ def test_numero_enorme_nao_mexe_na_tela(app):
     assert j.aba_peso.peso.text() == GRANDE_DEMAIS
     assert j.aba_peso.peso.toolTip()  # o número inteiro fica na dica do mouse
     j.close()
+
+
+def test_numero_enorme_calculado_com_a_aba_escondida(app):
+    """Conta refeita com a aba escondida (ex.: Salvar no EDITAR): ao abrir a aba, mostra
+    "grande demais" e não o número cortado."""
+    from PySide6.QtCore import Qt
+
+    from calculo_paletes.interface.componentes import GRANDE_DEMAIS
+
+    j = JanelaPrincipal()
+    j.setAttribute(Qt.WA_DontShowOnScreen)
+    j.resize(1920, 1000)
+    j.show()
+    app.processEvents()
+    j.abas.setCurrentIndex(0)  # aba PESO DO PALETE escondida
+    for campo in j.aba_peso.campos.values():
+        campo.setText("9" * 12)
+    j.aba_peso.recalcular()
+    j.abas.setCurrentIndex(2)
+    app.processEvents()
+    assert j.aba_peso.peso.text() == GRANDE_DEMAIS
+    j.close()
