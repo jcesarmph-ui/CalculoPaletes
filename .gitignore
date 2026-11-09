@@ -1,0 +1,22 @@
+# Dados da empresa (planilha original, logo, configurações) — nunca vão para o GitHub
+dados/
+
+# Ambiente virtual do Python
+.venv/
+
+# Arquivos gerados pelo Python, testes e ruff
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Arquivos gerados pelo PyInstaller (o .exe)
+build/
+dist/
+*.spec
+
+# Planilhas e bancos soltos fora de dados/ (segurança extra)
+*.xlsx
+*.xls
+*.db
