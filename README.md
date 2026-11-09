@@ -67,7 +67,7 @@ campos, chama as regras e mostra os resultados.
 | Tecnologia | Aplicação no projeto |
 |---|---|
 | 🐍 Python 3.12+ | Linguagem do programa e das regras de cálculo |
-| 🖼️ PySide6 (Qt) | Interface desktop em tema escuro, sempre maximizada |
+| 🖼️ PySide6 (Qt) | Interface desktop em tema claro, sempre maximizada, com as contas refeitas a cada tecla |
 | 🧪 pytest | Testes automáticos das fórmulas e da janela (modo offscreen) |
 | 🧹 Ruff | Verificação de estilo e de erros comuns |
 | 📦 PyInstaller | Empacotamento em um único programa para a pasta da rede |
@@ -83,7 +83,7 @@ campos, chama as regras e mostra os resultados.
 
 - [x] **Fase 0** — Levantamento das regras e estrutura do projeto
 - [x] **Fase 1** — Regras de cálculo (chapa, trapézio, peso do palete) com testes
-- [ ] **Fase 2** — Janela com as três abas, no padrão visual dos programas
+- [x] **Fase 2** — Janela com as três abas: contas na hora, avisos em vermelho e tela que não se mexe com números enormes
 - [ ] **Fase 3** — Menu ☰ → EDITAR para os valores fixos
 - [ ] **Fase 4** — Programa empacotado e em uso (versão 1.0.0)
 - [ ] **Fase 5** — Portfólio: fotos das telas (dados fictícios) e README completo
