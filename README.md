@@ -82,10 +82,11 @@ campos, chama as regras e mostra os resultados.
 ### 🗺️ Roteiro
 
 - [x] **Fase 0** — Levantamento das regras e estrutura do projeto
-- [ ] **Fase 1** — Regras de cálculo (chapa, trapézio, peso do palete) com testes
+- [x] **Fase 1** — Regras de cálculo (chapa, trapézio, peso do palete) com testes
 - [ ] **Fase 2** — Janela com as três abas, no padrão visual dos programas
 - [ ] **Fase 3** — Menu ☰ → EDITAR para os valores fixos
 - [ ] **Fase 4** — Programa empacotado e em uso (versão 1.0.0)
+- [ ] **Fase 5** — Portfólio: fotos das telas (dados fictícios) e README completo
 
 ## 🧠 Competências
 

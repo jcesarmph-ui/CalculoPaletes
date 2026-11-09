@@ -28,7 +28,8 @@ where = ["src"]
 version = {attr = "calculo_paletes.__version__"}
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+# dados/testes/ = testes com os números da planilha real (fora do Git; só roda neste PC)
+testpaths = ["tests", "dados/testes"]
 
 [tool.ruff]
 line-length = 100
