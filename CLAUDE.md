@@ -15,6 +15,18 @@ só o que é deste programa.
 - Mostrar **só** as saídas listadas abaixo. Fora do programa (até o usuário pedir): custo em R$,
   escolha da bobina de plástico 1600/2200, abas ROLO, PPAP e RNC da planilha.
 
+## Visual (diferenças do padrão geral)
+- **Tema claro (branco)**, pedido do usuário em 2026-11-09 — exceção ao tema escuro dos outros
+  programas. Os dois temas ficam em `interface/estilo.py` (`TEMA`); o significado das cores é o
+  mesmo (verde = certo, vermelho = erro, amarelo = aviso).
+- No tema claro o logo usa `dados/logo_mg_escuro.png` (cópia do logo com as letras escurecidas
+  da coluna 330 em diante; o símbolo fica igual). Sem ela, usa o `logo_mg.png`.
+- **Nenhum número mexe na tela** (teste do usuário com número "infinito"): campos com no máximo
+  12 caracteres; caixas de resultado com largura vinda da tela (`RotuloResultado`) — se o número
+  não couber, mostra "grande demais" em amarelo, com o número inteiro na dica do mouse.
+- A janela tem que caber em 1920 × 1000 (tela do usuário: 1032 px livres) — há teste para isso.
+- Sem botão CALCULAR: as contas se refazem a cada tecla.
+
 ## Telas (abas CHAPA | TRAPÉZIO | PESO DO PALETE)
 | Tela | Entradas | Saídas |
 |---|---|---|
