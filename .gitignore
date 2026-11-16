@@ -23,3 +23,6 @@ dist/
 
 # Scripts de gerar o .exe e montar a entrega (cópia no repositório PRIVADO claude-config)
 empacotamento/
+
+# instruções do Claude Code: ficam só no PC (cópia no repositório privado claude-config)
+CLAUDE.md
