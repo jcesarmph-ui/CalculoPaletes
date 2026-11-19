@@ -32,7 +32,7 @@
 |---|---|---|
 | Os cálculos ficavam numa planilha com campos de entrada e de resultado espalhados, fórmulas misturadas e células de teste | Um programa com uma tela por tipo de cálculo, só com os campos que importam | Quem usa digita as medidas e vê os resultados na hora, sem risco de apagar uma fórmula |
 | Valores de referência (densidades, altura da madeira, folga da fita) escondidos dentro das fórmulas | Valores fixos sempre visíveis na tela e editáveis num menu próprio | Todo mundo sabe com quais valores a conta foi feita |
-| A planilha dava "163,2 blanks por pilha" e tinha duas versões da mesma conta de fita | Regras levantadas célula por célula com o usuário; blanks arredondados para cima | Um resultado só, que dá para montar de verdade |
+| A planilha dava "163,2 blanks por pilha" e tinha duas versões da mesma conta de fita | Regras levantadas célula por célula com a área usuária; blanks arredondados para cima | Um resultado só, que dá para montar de verdade |
 | Erro de digitação (uma letra no lugar de um zero) passava despercebido | Avisos em vermelho dizendo qual campo está errado | Nenhum resultado aparece com dado errado |
 
 ```mermaid
@@ -248,7 +248,7 @@ arquivo `configuracao.json` na pasta de dados da rede.
 ## 🛠️ Como foi desenvolvido
 
 - Uma fase por vez, cada uma numa branch com Pull Request e commits pequenos em português.
-- Regras de negócio levantadas com o usuário a partir da planilha original, conferindo célula por célula.
+- Regras de negócio levantadas com a área usuária a partir da planilha original, conferindo célula por célula.
 - Testes automáticos das fórmulas antes de qualquer tela; os pesos conferidos com os números da
   planilha (testes só locais) e os testes publicados usam números fictícios.
 - Cada mudança de visual mostrada primeiro numa foto de prévia, sem mexer no programa.
@@ -268,7 +268,7 @@ arquivo `configuracao.json` na pasta de dados da rede.
 
 | Fase | Versão | O que entrou |
 |---|---|---|
-| 0 | — | Leitura da planilha, regras combinadas com o usuário, estrutura do projeto e dados da empresa fora do Git |
+| 0 | — | Leitura da planilha, regras combinadas com a área usuária, estrutura do projeto e dados da empresa fora do Git |
 | 1 | 0.1.0 | Fórmulas de chapa, trapézio e peso do palete, com valores fixos num lugar só e erros em português |
 | 2 | 0.2.0 | Janela com três abas, tema claro, fonte grande, avisos e proteção contra números enormes |
 | 3 | 0.3.0 | Menu ☰ e EDITAR com Salvar/Cancelar, gravando os valores fixos na rede (a senha foi testada e retirada) |
