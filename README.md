@@ -11,7 +11,7 @@
 ![Status](https://img.shields.io/badge/status-em_uso_v1.0.1-43A047?style=for-the-badge)
 
 **Calculadora desktop para a engenharia definir o palete de chapas e trapézios de aço:**
-**blanks por pilha, alturas, fita de arquear, plástico e peso do palete de madeira — na hora, sem planilha.**
+**blanks por pilha, alturas, fita de arquear, plástico e peso do palete de madeira — em tempo real, sem planilha.**
 
 [🎯 Visão Geral](#-visão-geral) •
 [📊 Em números](#-em-números) •
@@ -30,9 +30,9 @@
 
 | ❌ Problema | 💡 Solução | ✅ Resultado |
 |---|---|---|
-| Os cálculos ficavam numa planilha com campos de entrada e de resultado espalhados, fórmulas misturadas e células de teste | Um programa com uma tela por tipo de cálculo, só com os campos que importam | Quem usa digita as medidas e vê os resultados na hora, sem risco de apagar uma fórmula |
+| Os cálculos ficavam numa planilha com campos de entrada e de resultado espalhados, fórmulas misturadas e células de teste | Um programa com uma tela por tipo de cálculo, só com os campos que importam | Quem usa digita as medidas e vê os resultados em tempo real, sem risco de apagar uma fórmula |
 | Valores de referência (densidades, altura da madeira, folga da fita) escondidos dentro das fórmulas | Valores fixos sempre visíveis na tela e editáveis num menu próprio | Todo mundo sabe com quais valores a conta foi feita |
-| A planilha dava "163,2 blanks por pilha" e tinha duas versões da mesma conta de fita | Regras levantadas célula por célula com o usuário; blanks arredondados para cima | Um resultado só, que dá para montar de verdade |
+| A planilha dava "163,2 blanks por pilha" e tinha duas versões da mesma conta de fita | Regras levantadas célula por célula com a área usuária; blanks arredondados para cima | Um resultado só, que pode ser montado na prática |
 | Erro de digitação (uma letra no lugar de um zero) passava despercebido | Avisos em vermelho dizendo qual campo está errado | Nenhum resultado aparece com dado errado |
 
 ```mermaid
@@ -56,7 +56,7 @@ mindmap
       Vale para todos
     Segurança
       Avisos em vermelho
-      Tela que não se mexe
+      Tela estável
       Valores inválidos recusados
 ```
 
@@ -100,7 +100,7 @@ mindmap
 | ![Aba TRAPÉZIO com aviso](docs/telas/02_trapezio_aviso.png) | ![Aba PESO DO PALETE](docs/telas/03_peso_palete.png) |
 | *Letra "O" no lugar do zero: aviso em vermelho dizendo o campo* | *Peso do palete: só as linhas preenchidas entram na conta* |
 | ![EDITAR com valor inválido](docs/telas/05_editar.png) | ![Número enorme](docs/telas/06_numero_enorme.png) |
-| *EDITAR: valor inválido é recusado e nada é salvo* | *Número enorme: a tela não se mexe, aparece "grande demais"* |
+| *EDITAR: valor inválido é recusado e nada é salvo* | *Número enorme: o layout permanece estável, aparece "grande demais"* |
 
 ---
 
@@ -113,11 +113,11 @@ mindmap
 - ⚙️ **Valores fixos editáveis** — densidade do aço e da madeira, altura e seção da madeira, cava e
   folga da fita, sempre visíveis e alteráveis pelo menu ☰ → EDITAR (Salvar / Cancelar), valendo
   para todos que usam o programa.
-- ⌨️ **Contas na hora** — sem botão de calcular: os resultados se refazem a cada tecla; Enter pula
+- ⌨️ **Contas em tempo real** — sem botão de calcular: os resultados se refazem a cada tecla; Enter pula
   para o próximo campo.
 - 🚨 **Avisos claros** — erro de digitação, valor zerado ou base menor maior que a base maior aparecem
   em vermelho, dizendo o campo; os resultados ficam em "—" até tudo estar certo.
-- 🧱 **Tela que não se mexe** — campos com no máximo 12 caracteres e resultados com largura fixa; um
+- 🧱 **Tela estável** — campos com no máximo 12 caracteres e resultados com largura fixa; um
   número enorme vira "grande demais" em amarelo, com o valor inteiro na dica do mouse.
 
 <details>
@@ -240,7 +240,7 @@ classDiagram
     ValoresFixos --> PecaMadeira : peso do palete
 ```
 
-Não há banco de dados: o programa é só calculadora. A única coisa gravada são os valores fixos, num
+Não há banco de dados: o programa funciona apenas como calculadora. Os únicos dados gravados são os valores fixos, num
 arquivo `configuracao.json` na pasta de dados da rede.
 
 ---
@@ -248,18 +248,18 @@ arquivo `configuracao.json` na pasta de dados da rede.
 ## 🛠️ Como foi desenvolvido
 
 - Uma fase por vez, cada uma numa branch com Pull Request e commits pequenos em português.
-- Regras de negócio levantadas com o usuário a partir da planilha original, conferindo célula por célula.
+- Regras de negócio levantadas com a área usuária a partir da planilha original, conferindo célula por célula.
 - Testes automáticos das fórmulas antes de qualquer tela; os pesos conferidos com os números da
   planilha (testes só locais) e os testes publicados usam números fictícios.
-- Cada mudança de visual mostrada primeiro numa foto de prévia, sem mexer no programa.
+- Cada mudança de visual mostrada primeiro numa foto de prévia, sem alterar o programa.
 - Decisões de arquitetura registradas em ADRs (`docs/decisoes/`).
 
 ### 🗺️ Roteiro
 
 - [x] **Fase 0** — Levantamento das regras e estrutura do projeto
 - [x] **Fase 1** — Regras de cálculo (chapa, trapézio, peso do palete) com testes
-- [x] **Fase 2** — Janela com as três abas: contas na hora, avisos em vermelho e tela que não se mexe com números enormes
-- [x] **Fase 3** — Menu ☰ → EDITAR: valores fixos editáveis, gravados para todos e com as contas refeitas na hora
+- [x] **Fase 2** — Janela com as três abas: contas em tempo real, avisos em vermelho e tela estável com números enormes
+- [x] **Fase 3** — Menu ☰ → EDITAR: valores fixos editáveis, gravados para todos e com as contas refeitas em tempo real
 - [x] **Fase 4** — Programa empacotado com lançador (cópia local rápida) e em uso na rede (versão 1.0.0)
 - [x] **Fase 5** — Portfólio: fotos das telas (dados fictícios) e README completo
 
@@ -268,7 +268,7 @@ arquivo `configuracao.json` na pasta de dados da rede.
 
 | Fase | Versão | O que entrou |
 |---|---|---|
-| 0 | — | Leitura da planilha, regras combinadas com o usuário, estrutura do projeto e dados da empresa fora do Git |
+| 0 | — | Leitura da planilha, regras combinadas com a área usuária, estrutura do projeto e dados da empresa fora do Git |
 | 1 | 0.1.0 | Fórmulas de chapa, trapézio e peso do palete, com valores fixos num lugar só e erros em português |
 | 2 | 0.2.0 | Janela com três abas, tema claro, fonte grande, avisos e proteção contra números enormes |
 | 3 | 0.3.0 | Menu ☰ e EDITAR com Salvar/Cancelar, gravando os valores fixos na rede (a senha foi testada e retirada) |
@@ -323,6 +323,6 @@ de gerar o `.exe`.
 
 <div align="center">
 
-**Da planilha bagunçada para uma calculadora clara, testada e fácil de manter.**
+**Da planilha desorganizada para uma calculadora clara, testada e fácil de manter.**
 
 </div>
